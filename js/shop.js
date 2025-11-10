@@ -99,7 +99,9 @@ const buy = (id) => {
 
 // Exercise 2
 const cleanCart = () =>  {
-
+    cart.length = 0;
+    console.log("Empty cart!", cart);
+  
 }
 
 // Exercise 3
