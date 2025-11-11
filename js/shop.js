@@ -121,6 +121,21 @@ const calculateTotal = () =>  {
 // Exercise 4
 const applyPromotionsCart = () =>  {
     // Apply promotions to each item in the array "cart"
+    for (let i = 0; i < cart.length; i++){
+        const currentProduct = cart[i] 
+
+        const subtotal = currentProduct.price * currentProduct.quantity;
+
+        if (currentProduct.id === 1 && currentProduct.quantity >= 3) {
+
+            currentProduct.subtotalWithDiscount = subtotal * 0.8;
+        } else if (currentProduct.id === 3 && currentProduct.quantity >= 10){
+            currentProduct.subtotalWithDiscount = subtotal * 0.70
+        } else {
+            currentProduct.subtotalWithDiscount = subtotal
+        }
+    }
+    console.log("Promotions applied!", cart);
 }
 
 // Exercise 5
@@ -129,7 +144,7 @@ const printCart = () => {
 }
 
 
-// ** Nivell II **
+// ** level II **
 
 // Exercise 7
 const removeFromCart = (id) => {
@@ -139,3 +154,5 @@ const removeFromCart = (id) => {
 const open_modal = () =>  {
     printCart();
 }
+
+
