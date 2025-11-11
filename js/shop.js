@@ -110,8 +110,9 @@ const calculateTotal = () =>  {
     let total = 0
 
     for(let i = 0; i < cart.length; i++){
-        const currentProduct = cart[i]
-        total += currentProduct.price * currentProduct.quantity
+       if(cart[i].subtotalWithDiscount){
+        total += cart[i].subtotalWithDiscount;
+       }
     }
 
     console.log("the total price is:", total);
@@ -141,6 +142,30 @@ const applyPromotionsCart = () =>  {
 // Exercise 5
 const printCart = () => {
     // Fill the shopping cart modal manipulating the shopping cart dom
+    applyPromotionsCart();
+
+    const finalTotal = calculateTotal();
+
+    const cartListBody = document.getElementById('cart_list')
+    const totalPriceElement = document.getElementById('total_price')
+
+    cartListBody.innerHTML = "";
+
+    for (let i = 0; i < cart.length; i++){
+        const product = cart[i];
+
+        const newRow = document.createElement('tr')
+
+        newRow.innerHTML = `
+            <th scope="row">${product.name}</th>
+            <th>${product.price}</th>
+            <th>${product.quantity}</th>
+            <th>${product.subtotalWithDiscount.toFixed(2)}</th>
+        `;
+        cartListBody.appendChild(newRow);
+    }
+
+    totalPriceElement.innerHTML = finalTotal.toFixed(2);
 }
 
 
@@ -155,4 +180,23 @@ const open_modal = () =>  {
     printCart();
 }
 
+// Button connection
+const allCartButtons = document.querySelectorAll('.cart-button')
+
+allCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        open_modal()
+    })
+})
+
+
+const allBuyButtons = document.querySelectorAll ('.add-to-cart');
+
+allBuyButtons.forEach(button => {
+    button.addEventListener('click', (even) => {
+        const productId = even.target.dataset.productId
+
+        buy(+productId);
+    })
+})
 
