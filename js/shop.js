@@ -207,8 +207,9 @@ allBuyButtons.forEach(button => {
 })
 
 const cleanCartButton = document.getElementById('clean-cart')
-
-cleanCartButton.addEventListener('click', () =>{
-    cleanCart()
-    printCart()
-})
+if (cleanCartButton) {
+    cleanCartButton.addEventListener('click', () =>{
+        cleanCart()
+        printCart()
+ })
+}
