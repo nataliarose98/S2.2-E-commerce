@@ -72,8 +72,6 @@ const products = [
 // Improved version of cartList. Cart is an array of products (objects), but each one has a quantity field to define its quantity, so these products are not repeated.
 const cart = [];
 
-const total = 0;
-
 // Exercise 1
 const buy = (id) => {
     // 1. Loop for to the array products to get the item to add to cart
@@ -158,9 +156,9 @@ const printCart = () => {
 
         newRow.innerHTML = `
             <th scope="row">${product.name}</th>
-            <th>${product.price}</th>
-            <th>${product.quantity}</th>
-            <th>${product.subtotalWithDiscount.toFixed(2)}</th>
+            <td>${product.price}</td>
+            <td>${product.quantity}</td>
+            <td>${product.subtotalWithDiscount.toFixed(2)}</td>
         `;
         cartListBody.appendChild(newRow);
     }
@@ -173,6 +171,15 @@ const printCart = () => {
 
 // Exercise 7
 const removeFromCart = (id) => {
+    const productIndex = cart.findIndex((product) => product.id === id)
+
+    if(productIndex !== -1){
+        if (cart[productIndex].quantity === 1){
+            cart.splice(productIndex, 1)
+        } else {
+            cart[productIndex].quantity--;
+        }
+    } 
 
 }
 
@@ -193,10 +200,15 @@ allCartButtons.forEach(button => {
 const allBuyButtons = document.querySelectorAll ('.add-to-cart');
 
 allBuyButtons.forEach(button => {
-    button.addEventListener('click', (even) => {
-        const productId = even.target.dataset.productId
-
+    button.addEventListener('click', (event) => {
+        const productId = event.target.dataset.productId
         buy(+productId);
     })
 })
 
+const cleanCartButton = document.getElementById('clean-cart')
+
+cleanCartButton.addEventListener('click', () =>{
+    cleanCart()
+    printCart()
+})
