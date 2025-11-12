@@ -11286,3 +11286,15 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+.primary-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+#main-nav,
+#navbar-example2 {
+    position: static;       
+}
+
+

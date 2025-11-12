@@ -93,13 +93,14 @@ const buy = (id) => {
     }
 
     console.log(cart)
+    updateCartCount()
  }
 
 // Exercise 2
 const cleanCart = () =>  {
     cart.length = 0;
     console.log("Empty cart!", cart);
-  
+    updateCartCount();
 }
 
 // Exercise 3
@@ -166,6 +167,20 @@ const printCart = () => {
     totalPriceElement.innerHTML = finalTotal.toFixed(2);
 }
 
+const updateCartCount = () => {
+    let totalItems = 0; 
+
+    for(let i = 0; i < cart.length; i++) {
+        totalItems += cart[i].quantity
+    }
+
+    const cartBadge = document.getElementById("count_product");
+
+    if (cartBadge) {
+      cartBadge.innerText = totalItems;
+    }
+}
+
 
 // ** level II **
 
@@ -181,6 +196,7 @@ const removeFromCart = (id) => {
         }
     } 
 
+    updateCartCount();
 }
 
 const open_modal = () =>  {
