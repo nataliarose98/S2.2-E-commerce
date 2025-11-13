@@ -44,7 +44,8 @@ const validate = () => {
   if (fName.value.length < 3) {
     error++;
     fName.classList.add("is-invalid");
-    errorName.innerText ="This field is required and must have, at least, 3 characters";
+    errorName.innerText =
+      "This field is required and must have, at least, 3 characters";
   } else if (!lettersOnly.test(fName.value)) {
     error++;
     fName.classList.add("is-invalid");
@@ -65,23 +66,26 @@ const validate = () => {
   if (fEmail.value.length < 3) {
     error++;
     fEmail.classList.add("is-invalid");
-    errorEmail.innerText = "This field is required and must have, at least, 3 characters";
+    errorEmail.innerText =
+      "This field is required and must have, at least, 3 characters";
   } else if (!emailFormat.test(fEmail.value)) {
     error++;
     fEmail.classList.add("is-invalid");
     errorEmail.innerHTML = "Please enter a valid email format";
   }
 
-  if(fAddress.value.length < 3){
+  if (fAddress.value.length < 3) {
     error++;
-    fAddress.classList.add('is-invalid');
-    errorAddress.innerHTML = "This field is required and must have, at least, 3 characters";
+    fAddress.classList.add("is-invalid");
+    errorAddress.innerHTML =
+      "This field is required and must have, at least, 3 characters";
   }
 
   if (fPassword.value.length < 3) {
     error++;
     fPassword.classList.add("is-invalid");
-    errorPassword.innerText ="This field is required and must have, at least, 3 characters";
+    errorPassword.innerText =
+      "This field is required and must have, at least, 3 characters";
   } else if (!passwordFormat.test(fPassword.value)) {
     error++;
     fPassword.classList.add("is-invalid");
@@ -91,7 +95,8 @@ const validate = () => {
   if (fPhone.value.length < 3) {
     error++;
     fPhone.classList.add("is-invalid");
-    errorPhone.innerText ="This field is required and must have, at least, 3 characters";
+    errorPhone.innerText =
+      "This field is required and must have, at least, 3 characters";
   } else if (!numbersOnly.test(fPhone.value)) {
     error++;
     fPhone.classList.add("is-invalid");
@@ -104,5 +109,3 @@ const validate = () => {
     alert("Form submitted successfully");
   }
 };
-
-

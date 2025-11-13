@@ -1,66 +1,68 @@
-# Sprint 2 IT Academy | Shop
+# E-commerce Cart Demo (IT Academy Sprint 2.2)
 
-## Introduction
+This project is a demonstration of an e-commerce storefront developed for IT Academy's Sprint 2.2. The primary goal was to implement the complete business logic for a functional shopping cart using vanilla JavaScript, HTML, and Bootstrap-powered CSS.
 
-A company in the e-commerce sector has asked us for a web application that allows them to offer the purchase of their products through the internet.
+##  Features
 
-You will be in charge of setting up an initial demo version of the application for the client: management of the shopping cart and the application of the promotions on the final price. You have 1 week to finish this part of sprint (2.2).
+This project simulates a complete e-commerce flow by implementing the following features from scratch:
 
-<br>
+- **Dynamic Shopping Cart:**
+  - Add products to the cart (`buy()`).
+  - Increment quantity for existing items instead of adding duplicates.
+  - Clear the entire cart (`cleanCart()`).
+  - Decrement item quantity or remove items one-by-one (`removeFromCart()`).
+- **Promotions Engine:**
+  - Applies dynamic discounts (`applyPromotionsCart()`) based on business rules (e.g., 20% off for 3+ oils, 30% off for 10+ cupcake mixes).
+- **Dynamic UI Rendering:**
+  - The cart modal (`printCart()`) is dynamically generated to display all items, prices, quantities, and discounted subtotals.
+  - The cart badge (`updateCartCount()`) updates in real-time with the total item count on any cart modification.
+- **Checkout Form Validation:**
+  - Complete client-side validation (`validate()`) for the checkout form.
+  - Validates fields for length, required status, and specific formats (letters only, numbers only, email, alphanumeric password) using Regular Expressions.
+  - Dynamically displays and hides error messages using Bootstrap's `is-invalid` class.
+- **Custom Theming:**
+  - A custom theme applied on top of the default Bootstrap styling.
+  - Includes global styles, elegant typography, gradient buttons, and subtle hover animations for a polished, professional feel.
 
-## Requirements
+---
 
+## Tech Stack
 
-1. Clone this repo
-```bash
-$ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-shop
-```
+- **HTML5:** For semantic structure (`index.html`, `checkout.html`).
+- **CSS3 (with Bootstrap 5):** For the base layout and responsive design.
+- **`styles.css`:** Custom stylesheet for all branding and theming.
+- **JavaScript (ES6+):** For all application logic (`shop.js`, `checkout.js`).
 
-2. Unlink your repo from the itacademy repository.
-(Explanation: You have to upload the code to your GitHub repository, not to the IT Academy. That's why you have to unlink your project from IT Academy GitHub with the following command)
+---
 
-```bash
-$ git remote rm origin
-```
+##  Project Structure
 
-3. Link your repo to the repository you have to create in your github account
-(Explanation: Now your project is not linked to any remote repository. In order to upload your code, you have to link your project to the new repository created on github.com using the following command)
+starter-code-frontend-shop/
+│
+├── css/
+│ └── styles.css
+│
+├── images/
+│ └── ... (Image assets)
+│
+├── js/
+│   └── checkout.js (Checkout form validation logic)
+│   └── shop.js (All cart and store logic)
+│
+├── index.html (Main store page)
+├── checkout.html (Checkout form page)
+└── README.md (This file)
 
-```bash
-$ git remote add origin <your repo name!>
-```
+## Getting Started
 
-<br>
-
-## Submission
-
-1. It is necessary to upload each exercise in a separate commit. The commit name must clearly indicate its content.
-
-2. Upload the link to your GitHub repository to the virtual campus, enabling your mentor to review and provide feedback.
-
-
-
-<br>
-
-## Introduction
-
-The statement of the exercise is available on the virtual campus.
-
-<br>
-
-
-## Instructions
-
-You have the following indications from the frontend manager:
-
-- You have prepared the base of the project on which you will work: https://github.com/IT-Academy-BCN/starter-code-frontend-shop
-
-- The base of the project on which you will work has already created all the files, and an initial version of the interface, so you can focus on programming the logic.
-
-- As at the moment we don't consume data from a server using an API, we will work with hardcoded data in the application. For the moment we will implement the logic using a small group of 9 products divided in 3 sections.
-
-- Except for the last level, showing the result of the functions by console is enough.
-
-- The logic to implement will be placed in the src/grocery.js and src/checkout.js files. You will see that the built in functions have already been created for you to implement them.
-
-- It is forbidden to copy the code, since this way you don't learn anything. Furthermore, as you can see, the second release of sprint 5 is a mini-level test with the mentor, in which you will have to demonstrate live that you have acquired the javascript concepts. Don't worry, if you work on the releases you won't have any problems.
+1.  Clone this repository to your local machine.
+2.  Navigate into the project directory:
+    ```bash
+    cd starter-code-frontend-shop
+    ```
+3.  Check out the main development branch:
+    ```bash
+    git checkout feature/sprint-2.2-logic
+    ```
+4.  Open the `index.html` file in your browser.
+5.  Start shopping!
