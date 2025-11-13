@@ -60,9 +60,5 @@ starter-code-frontend-shop/
     ```bash
     cd starter-code-frontend-shop
     ```
-3.  Check out the main development branch:
-    ```bash
-    git checkout feature/sprint-2.2-logic
-    ```
-4.  Open the `index.html` file in your browser.
-5.  Start shopping!
+3.  Open the `index.html` file in your browser.
+4.  Start shopping!
