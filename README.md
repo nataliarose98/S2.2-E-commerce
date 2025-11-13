@@ -36,7 +36,7 @@ This project simulates a complete e-commerce flow by implementing the following 
 ---
 
 ##  Project Structure
-
+```
 starter-code-frontend-shop/
 │
 ├── css/
@@ -52,6 +52,7 @@ starter-code-frontend-shop/
 ├── index.html (Main store page)
 ├── checkout.html (Checkout form page)
 └── README.md (This file)
+```
 
 ## Getting Started
 
@@ -62,3 +63,4 @@ starter-code-frontend-shop/
     ```
 3.  Open the `index.html` file in your browser.
 4.  Start shopping!
+
